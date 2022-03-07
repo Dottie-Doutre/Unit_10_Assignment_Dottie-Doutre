@@ -1,9 +1,11 @@
 # Unit 10 - A Yen for the Future
 
-## Unit 10 assignment by Dorothy Doutre
----
+### Assignment by Dorothy Doutre
+![image_add](images/unit-10-readme-photo.jfif)
+
 ## Assignment Summary:
-### For this assignment we are tasked with finding the future movements of the Canadian dollar value versus the Japanese Yen. This is done utilising the following techniques:
+
+For this assignment we are tasked with finding the future movements of the Canadian dollar value versus the Japanese Yen. This is done utilising the following techniques:
 
 ### Time series forecasting
 ```
@@ -15,7 +17,7 @@ Forecasting volatility via GARCH.
 ```
 ### Linear Regression Forecasting
 ```
-Data prepearation via percentage returns, creatnig lagged returns via shift methos and Train Test split.
+Data prepearation via percentage returns, creating lagged returns via shift method and Train Test split.
 Fitting a linear regression model.
 Making prediction via test data.
 Out and In sample performance.
@@ -26,34 +28,73 @@ Out and In sample performance.
 - Jupyter-lab (mlenv environment)
 - VS Code
 
-## Historical plotting: 
+---
 
-add descrip here
+## Assignment findings:
+### Historical plotting
 
-[add immage here]
+Loaded the historical data of the Canadian Dollar-Yen exchange rate, the futures data and applied a time series analysis. Then modeled to determine whether there is any predictable behaviour.
 
-## Decomposition using a Hodrick-Prescott filter.
+![image_add](images/image_1.PNG)
 
-add descrip here
+### Hodrick-Prescott filter
 
-[add immage here]
+Using a Hodrick-Prescott Filter to decompose the exchange rate price into trend and noise.
 
-## Forecasting returns via ARMA model.
+Image below is looking at Price vs Trend.
 
-[add immage here]
+![image_add](images/image_2.PNG)
 
-## Forecasting returns via ARIMA model.
+Image below is looking at Noise only.
 
-[add immage here]
+![image_add](images/image_3.PNG)
 
-## Forecasting volatility via GARCH.
+### Forecasting - ARMA model
 
-[add immage here]
+An ARMA model, or Autoregressive Moving Average model, is used to provide a description of a weakly stationary average.
 
-## Fitting a linear regression model.
+![image_add](images/image_4.PNG)
 
-[add immage here]
+Then looked at a 5 day forecast based on the results above (ARMA model).
 
-## Out and In sample performance.
+![image_add](images/image_5.PNG)
 
-[add immage here]
+### Forecasting - ARIMA model
+
+ARIMA model below is applied when the data shows evidence that it is non-stationarity based on the mean.
+
+![image_add](images/image_6.PNG)
+
+Then looked at a 5 day forecast based on the results above (ARIMA model).
+
+![image_add](images/image_7.PNG)
+
+### Forecasting - GARCH
+
+Forecast near-term volatility of Japanese Yen exchange rate returns utilising the GARCH method below.
+
+![image_add](images/image_8.PNG)
+
+Then looked at a 5 day forecast on the volatility based on the results above (GARCH).
+
+![image_add](images/image_9.PNG)
+
+### Linear Regression model
+
+Utilised the Scikit-Learn linear regression model to predict CAD/JPY returns with lagged CAD/JPY futures returns and categorical calendar seasonal effects based on the cad_jpy_df. 
+
+Train period = 2017 and Test period = 2018
+
+![image_add](images/image_10.PNG)
+
+### Out and In sample performance
+
+Below are the evaluation model using the (X_test and y_test) data.
+
+![image_add](images/image_11.PNG)
+
+Below are the evaluation model using the (X_train and y_train) data.
+
+![image_add](images/image_12.PNG)
+
+The out-of-sample RMSE is lower than the in-sample RMSE. RMSE is typically lower for training data, but is higher in this case.
