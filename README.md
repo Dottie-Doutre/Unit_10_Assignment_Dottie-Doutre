@@ -37,6 +37,12 @@ Loaded the historical data of the Canadian Dollar-Yen exchange rate, the futures
 
 ![image_add](images/image_1.PNG)
 
+Long-term the cad-jpy price is affected but major financial events.
+
+First big dip (lowest point) approx. late 1995 due to recession stemming from 1992 and the global recession late 2008/ early 2009 seeing the second biggest dip. Though it has periods where it is increasing, this seems to stablise since early 2000's at around 80 Yen. 
+
+Short term from 2012 to around 2014 probably due to inflation.
+
 ### Hodrick-Prescott filter
 
 Using a Hodrick-Prescott Filter to decompose the exchange rate price into trend and noise.
@@ -49,6 +55,8 @@ Image below is looking at Noise only.
 
 ![image_add](images/image_3.PNG)
 
+Stablising around 80 Yen since 2016. Also showing signs of stagnating between 2017 to 2020, where this dips to 75 Yen.
+
 ### Forecasting - ARMA model
 
 An ARMA model, or Autoregressive Moving Average model, is used to provide a description of a weakly stationary average.
@@ -58,6 +66,8 @@ An ARMA model, or Autoregressive Moving Average model, is used to provide a desc
 Then looked at a 5 day forecast based on the results above (ARMA model).
 
 ![image_add](images/image_5.PNG)
+
+ARMA model has a P value greater than 0.05, suggesting this is not a good fit
 
 ### Forecasting - ARIMA model
 
@@ -69,6 +79,8 @@ Then looked at a 5 day forecast based on the results above (ARIMA model).
 
 ![image_add](images/image_7.PNG)
 
+The above suggest within the near future the Yen will be decreasing in value.
+
 ### Forecasting - GARCH
 
 Forecast near-term volatility of Japanese Yen exchange rate returns utilising the GARCH method below.
@@ -78,6 +90,8 @@ Forecast near-term volatility of Japanese Yen exchange rate returns utilising th
 Then looked at a 5 day forecast on the volatility based on the results above (GARCH).
 
 ![image_add](images/image_9.PNG)
+
+Suggesting an increase in volitility and therefore there will be greater risk buying the Yen at this time.
 
 ### Linear Regression model
 
@@ -97,4 +111,16 @@ Below are the evaluation model using the (X_train and y_train) data.
 
 ![image_add](images/image_12.PNG)
 
-The out-of-sample RMSE is lower than the in-sample RMSE. RMSE is typically lower for training data, but is higher in this case.
+The RMSE for both in and out sample are greater than 0.5 indicating that it predicts the data accurately.
+
+In this case, the out-of-sample RMSE is lower than the in-sample RMSE. RMSE is typically lower for training data, but is higher in this case.
+
+---
+
+## Final conclusions:
+
+Based on the time series analysis, I would not buy yen at the moment as the ARMA and ARIMA models are suggesting increased volatility and a decrease in price over the next 5 days.
+
+The ARIMA model is suggesting an increase in risk for the yen.
+
+Based on all the models and results presented as they are consistent to the cad-jpy being a risky buy and a possible loss. I feel confident in using the models for trading.
